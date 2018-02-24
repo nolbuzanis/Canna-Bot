@@ -1,0 +1,44 @@
+{
+    "intents": {
+        "user intents": "light green, spotted",
+		"intent count": "2"
+    },
+    
+    "user-data": 
+    {
+        values:
+        {
+         'Bug Color': 'No Value',
+         'Burn': 'No Value',
+         'Burn Location': 'No Value',
+         'Close Fan': 'No Value',
+         'Color Area': 'No Value',
+         'Color Location': 'No Value',
+         'Disfiguration': 'No Value',
+         'Dropping/Wilting': 'No Value',
+         'Dying Leaves': 'No Value',
+         'Holes/Bites': 'No Value',
+         'Leaf': 'No Value',
+         'Leaf Color': 'Dark Green',
+         'Leaf Curling': 'No Value',
+         'Leaf Texture': 'No Value',
+         'Light Location': 'No Value',
+         'Lines inside Leaf': 'No Value',
+         'Medium': 'No Value',
+         'Recent Transplant': 'No Value',
+         'Soil': 'No Value',
+         'Spot Color': 'Dark Green',
+         'Spot Location': 'No Value',
+         'Spots': 'No Value',
+         'Visible Bugs': 'No Value',
+         'Water Frequency': 'No Value',
+         'pH': 'No Value'
+        }
+    },
+    
+    "response": 
+    {
+        "message": "Is the entire leaf colored, only the tip of the leaf colored, or some other part colored?",
+		"continue": "yes"
+    }
+}
