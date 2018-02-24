@@ -1,0 +1,26 @@
+{
+  "name": "grochat",
+  "version": "1.0.0",
+  "description": "plant diagnosis chatbot",
+  "main": "app.js",
+  "dependencies": {
+    "botbuilder": "^3.14.0",
+    "express": "^4.16.2",
+    "nodemon": "^1.15.1",
+    "restify": "^6.3.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nBuze/GroChat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nBuze/GroChat/issues"
+  },
+  "homepage": "https://github.com/nBuze/GroChat#readme"
+}
