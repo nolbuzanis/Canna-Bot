@@ -253,7 +253,8 @@ class PlantResponse:
         userData = data['user-data']['values']
         subject = data["previous_subject"].lower()
         
-        if subject == "pattern" or entity['attribute'] == "pattern": #######
+        
+        if subject == "pattern": #######
             subject = pattern
             userData['pattern'] = 'true'
             for entity in data['user_response']['entities']:
