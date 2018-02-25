@@ -246,12 +246,12 @@ class PlantResponse:
         
         
         if subject == "pattern": #######
-            subject = pattern
-            userData['pattern'] = 'true'
+            #subject = pattern
+            #userData['pattern'] = 'true'
             for entity in data['user_response']['entities']:
                 characteristic = entity['attribute']
                 if characteristic == "colour" or characteristic == 'location':
-                    characteristic = subject + characteristic
+                    characteristic = subject + " " + characteristic
                 value = entity['value'][0]
                 userData[characteristic] = value
                 
@@ -262,6 +262,14 @@ class PlantResponse:
                     characteristic = "leaf " + characteristic
                 if characteristic == 'location':
                     characteristic = 'colour ' + characteristic
+                value = entity['value'][0]
+                userData[characteristic] = value
+                
+        if subject == "bugs": #######
+            for entity in data['user_response']['entities']:
+                characteristic = entity['attribute']
+                if characteristic == "colour"
+                    characteristic = "bug " + characteristic
                 value = entity['value'][0]
                 userData[characteristic] = value
         
