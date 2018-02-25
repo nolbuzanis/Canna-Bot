@@ -225,20 +225,11 @@ def getLikelyProfile(userData):
             max = sum/len(match)
             
         sum = 0  
-        
-    if match != {}:
-        print(match)
-        print(max)
-        print("Profile Match:" + str(max*100) + "%")
-    else:
-        print("No Match!")
 
     for profile in profile_list:
         if match == profile:
             break
         index += 1
-        
-    print(profileNames[index])
     
     return (profileNames[index], str(max*100), match)
 
