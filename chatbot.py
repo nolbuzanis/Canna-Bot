@@ -283,6 +283,11 @@ class PlantResponse:
                 else:
                     data['previous_subject'] = 'leaf'
                     
+                if index == 7 or index == 12 or index == 13 or index == 14 or index == 15 or index == 16 or index == 17:
+                        print("1")
+                    else:
+                        print("0")
+                    
                 data['bot-response'] = questions[index]
                 with open("data.json", "w") as jsonFile:
                     json.dump(data, jsonFile)
@@ -303,7 +308,7 @@ class PlantResponse:
                         data['previous_subject'] = 'root'
                     else:
                         data['previous_subject'] = 'leaf'
-                    
+                        
                     if index == 7 or index == 12 or index == 13 or index == 14 or index == 15 or index == 16 or index == 17:
                         print("1")
                     else:
@@ -313,6 +318,8 @@ class PlantResponse:
                     with open("data.json", "w") as jsonFile:
                         json.dump(data, jsonFile)
                     break
+        
+        
                     
                 
             #if entity['type'] == 'location' and plantPart == 'leaf':
