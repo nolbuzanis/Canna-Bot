@@ -312,7 +312,7 @@ class PlantResponse:
                     else:
                         data['previous_subject'] = 'leaf'
                     
-                    if index == 7 or index == 12 or index == 13 or index == 14 index == 15 or index == 16 or index == 17:
+                    if index == 7 or index == 12 or index == 13 or index == 14 or index == 15 or index == 16 or index == 17:
                         print("1")
                     else:
                         print("0")
