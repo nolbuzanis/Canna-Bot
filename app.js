@@ -16,7 +16,6 @@ var connector = new builder.ChatConnector({
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 
-
 // Listen for messages from users  
 app.post('/api/messages', connector.listen());  
 
