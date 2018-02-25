@@ -197,91 +197,6 @@ questions = ["Yo, tell me about the discolorings on your leaves and where they a
 
 # In[125]:
 
-
-class PlantResponse:
-    
-    def main():
-        with open("data.json", "r") as jsonFile:
-            data = json.load(jsonFile)
-        if not data['user-data']['values']:
-            userData = {key: None for key in attributes}
-        userData = data['user-data']['values']
-        subject = data["previous_subject"].lower()
-        
-        if subject == "no value" or subject == "leaf": #######
-            for entity in data['user_response']['entities']:
-                characteristic = entity['attribute']
-                if characteristic == "colour" or characteristic == "curling" or characteristic == "texture":
-                    characteristic = "leaf " + characteristic
-                if characteristic == 'location':
-                    characteristic = 'colour ' + characteristic
-                value = entity['value'][0]
-                userData[characteristic] = value
-        
-        if subject == "pattern": #######
-            for entity in data['user_response']['entities']:
-                characteristic = entity['attribute']
-                if characteristic == "colour":
-                    characteristic = subject + characteristic
-                if characteristic == 'location':
-                    characteristic = subject + characteristic
-                value = entity['value'][0]
-                userData[characteristic] = value
-        
-        
-        profileName, probability, profile = getLikelyProfile(userData)
-        
-        i = 0
-        for key in profile:
-            if userData[key].lower() == "no value":
-                index = attributes.index(key)
-                if index < 4:
-                    data['previous_subject'] = 'leaf'
-                elif index < 7:
-                    data['previous_subject'] = 'pattern'
-                elif index < 10:
-                    data['previous_subject'] = 'bug'
-                elif index < 13:
-                    data['previous_subject'] = 'root'
-                else:
-                    data['previous_subject'] = 'leaf'
-                    
-                data['bot-response'] = questions[index]
-                with open("data.json", "w") as jsonFile:
-                    json.dump(data, jsonFile)
-                break
-            i = i + 1
-        
-        if i == len(profile):
-            for attribute in attributes:
-                if userData[attribute] == "no value":
-                    index = attributes.index(attribute)
-                    if index < 4:
-                        data['previous_subject'] = 'leaf'
-                    elif index < 7:
-                        data['previous_subject'] = 'pattern'
-                    elif index < 10:
-                        data['previous_subject'] = 'bug'
-                    elif index < 13:
-                        data['previous_subject'] = 'root'
-                    else:
-                        data['previous_subject'] = 'leaf'
-
-                    data['bot-response'] = questions[index]
-                    with open("data.json", "w") as jsonFile:
-                        json.dump(data, jsonFile)
-                    break
-                    
-                
-            #if entity['type'] == 'location' and plantPart == 'leaf':
-    
-    if __name__ == '__main__':
-        main()
-
-
-# In[122]:
-
-
 def getLikelyProfile(userData):
     
     userData = {key:"no value" for key in attributes}
@@ -326,4 +241,95 @@ def getLikelyProfile(userData):
     print(profileNames[index])
     
     return (profileNames[index], str(max*100), match)
+
+
+class PlantResponse:
+    
+    def main():
+        with open("data.json", "r") as jsonFile:
+            data = json.load(jsonFile)
+        if not data['user-data']['values']:
+            userData = {key: None for key in attributes}
+        userData = data['user-data']['values']
+        subject = data["previous_subject"].lower()
+        
+        if subject == "pattern" or entity['attribute'] == "pattern": #######
+            subject = pattern
+            userData['pattern'] = 'true'
+            for entity in data['user_response']['entities']:
+                characteristic = entity['attribute']
+                if characteristic == "colour" or characteristic == 'location':
+                    characteristic = subject + characteristic
+                value = entity['value'][0]
+                userData[characteristic] = value
+                
+        if subject == "no value" or subject == "leaf": #######
+            for entity in data['user_response']['entities']:
+                characteristic = entity['attribute']
+                if characteristic == "colour" or characteristic == "curling" or characteristic == "texture":
+                    characteristic = "leaf " + characteristic
+                if characteristic == 'location':
+                    characteristic = 'colour ' + characteristic
+                value = entity['value'][0]
+                userData[characteristic] = value
+        
+        
+        profileName, probability, profile = getLikelyProfile(userData)
+        
+        i = 0
+        for key in profile:
+            if userData[key].lower() == "no value":
+                index = attributes.index(key)
+                if index < 4:
+                    data['previous_subject'] = 'leaf'
+                elif index < 7:
+                    data['previous_subject'] = 'pattern'
+                elif index < 10:
+                    data['previous_subject'] = 'bug'
+                elif index < 13:
+                    data['previous_subject'] = 'root'
+                else:
+                    data['previous_subject'] = 'leaf'
+                    
+                data['bot-response'] = questions[index]
+                with open("data.json", "w") as jsonFile:
+                    json.dump(data, jsonFile)
+                break
+            i = i + 1
+        
+        if i == len(profile):
+            for attribute in attributes:
+                if userData[attribute] == "no value":
+                    index = attributes.index(attribute)
+                    if index < 4:
+                        data['previous_subject'] = 'leaf'
+                    elif index < 7:
+                        data['previous_subject'] = 'pattern'
+                    elif index < 10:
+                        data['previous_subject'] = 'bug'
+                    elif index < 13:
+                        data['previous_subject'] = 'root'
+                    else:
+                        data['previous_subject'] = 'leaf'
+                    
+                    if index == 7 or index == 12 or index == 13 or index == 14 index == 15 or index == 16 or index == 17:
+                        print("1")
+                    else:
+                        print("0")
+
+                    data['bot-response'] = questions[index]
+                    with open("data.json", "w") as jsonFile:
+                        json.dump(data, jsonFile)
+                    break
+                    
+                
+            #if entity['type'] == 'location' and plantPart == 'leaf':
+    
+    if __name__ == '__main__':
+        main()
+
+
+# In[122]:
+
+
 
