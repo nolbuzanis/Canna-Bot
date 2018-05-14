@@ -18,7 +18,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](/LICENSE.m
 Authors/ Collaborators
 ---------
 <em>Team at Hack The Valley 2:</em>
+
 @nolbuzanis - Matching Algorithm, data processing, LUIS (Python)
+
 @EdwardSeley - Matching Algorithm, data processing, LUIS (Python)
+
 @ACalverley - Back-end development, communication between LUIS and Python (Node.js)
+
 @Chris2Jones - Front-end development, skype bot framework and UI (HTML, CSS, Node.js)
