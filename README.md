@@ -19,10 +19,10 @@ Authors/ Collaborators
 ---------
 <em>Team at Hack The Valley 2:</em>
 
-@nolbuzanis - Matching Algorithm, data processing, LUIS (Python)
+[@nolbuzanis](https://github.com/nolbuzanis) - Matching Algorithm, data processing, LUIS (Python)
 
-@EdwardSeley - Matching Algorithm, data processing, LUIS (Python)
+[@EdwardSeley](https://github.com/EdwardSeley) - Matching Algorithm, data processing, LUIS (Python)
 
-@ACalverley - Back-end development, communication between LUIS and Python (Node.js)
+[@ACalverley](https://github.com/ACalverley) - Back-end development, communication between LUIS and Python (Node.js)
 
-@Chris2Jones - Front-end development, skype bot framework and UI (HTML, CSS, Node.js)
+[@Chris2Jones](https://github.com/Chris2Jones) - Front-end development, skype bot framework and UI (HTML, CSS, Node.js)
